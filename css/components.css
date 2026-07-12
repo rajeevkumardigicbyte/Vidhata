@@ -1243,8 +1243,11 @@
 }
 
 @media (max-width: 768px) {
+  .hero { min-height: 80vh; padding-top: var(--nav-h); }
   .hero__actions { flex-direction: column; }
   .hero__actions .btn { width: 100%; justify-content: center; }
+
+  .card, .service-card, .cert-card, .testimonial { padding: var(--sp-5); }
 
   .footer__grid { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; text-align: center; }
