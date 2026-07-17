@@ -31,7 +31,8 @@
     .med-breadcrumbs {
       background: var(--clr-med-bg);
       border-bottom: 1px solid var(--clr-med-border);
-      padding: var(--sp-4) 0;
+      padding-top: calc(var(--nav-h) + var(--sp-4));
+      padding-bottom: var(--sp-4);
       font-size: var(--fs-xs);
       color: var(--clr-med-text-muted);
     }
@@ -92,6 +93,7 @@
 
     .med-thumbnail-gallery {
       display: flex;
+      flex-wrap: wrap;
       gap: var(--sp-3);
       margin-top: var(--sp-4);
       justify-content: center;
