@@ -5,6 +5,10 @@
 
 'use strict';
 
+// ── Web3Forms API Key ─────────────────────────────────────
+// Retrieve a free key from https://web3forms.com
+const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE';
+
 // ── Form Validation ───────────────────────────────────────
 const validators = {
   required: (val) => val.trim() !== '' || 'This field is required',
@@ -106,41 +110,91 @@ function initQuoteForm() {
     const subjectEnc = encodeURIComponent(subject);
     const bodyEnc = encodeURIComponent(rawBody);
 
-    // Simulate processing delay for UX
-    await new Promise(r => setTimeout(r, 1200));
+    // Attempt Web3Forms submission if key is configured
+    let isWeb3FormsSubmitted = false;
+    if (WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY !== 'YOUR_ACCESS_KEY_HERE') {
+      try {
+        const formData = new FormData();
+        formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+        formData.append('name', fields.name);
+        formData.append('company', fields.company || 'N/A');
+        formData.append('email', fields.email);
+        formData.append('phone', fields.phone || 'N/A');
+        formData.append('product_type', fields.product_type || 'N/A');
+        formData.append('message', fields.message);
+        formData.append('from_name', 'Vidhata Plastics Website');
+        formData.append('subject', subject);
 
-    // Open mailto link
-    window.location.href = `mailto:vikrant@vidhata.co.in?cc=info@vidhata.co.in&subject=${subjectEnc}&body=${bodyEnc}`;
-
-    // Populate fallback details
-    const fallbackText = document.getElementById('fallback-text');
-    if (fallbackText) fallbackText.value = rawBody;
-
-    const btnWaFallback = document.getElementById('btn-wa-fallback');
-    if (btnWaFallback) {
-      btnWaFallback.href = `https://wa.me/919885100808?text=${encodeURIComponent('Hello Vidhata, here is my quote request:\n\n' + rawBody)}`;
-    }
-
-    // Toggle fallback action container
-    const toggleBtn = document.getElementById('toggle-fallback');
-    const fallbackActions = document.getElementById('fallback-actions');
-    if (toggleBtn && fallbackActions) {
-      toggleBtn.onclick = () => {
-        const isHidden = fallbackActions.style.display === 'none' || fallbackActions.style.display === '';
-        fallbackActions.style.display = isHidden ? 'flex' : 'none';
-        toggleBtn.textContent = isHidden ? 'Hide Fallback Options' : "Mail App didn't open?";
-      };
-    }
-
-    // Copy action
-    const copyBtn = document.getElementById('btn-copy-fallback');
-    if (copyBtn) {
-      copyBtn.onclick = () => {
-        navigator.clipboard.writeText(rawBody).then(() => {
-          copyBtn.textContent = '✓ Copied!';
-          setTimeout(() => { copyBtn.textContent = '📋 Copy Text'; }, 2000);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
         });
-      };
+        const resData = await response.json();
+        if (resData.success) {
+          isWeb3FormsSubmitted = true;
+          if (successMsg) {
+            const successDesc = successMsg.querySelector('p');
+            if (successDesc) {
+              successDesc.innerHTML = `Your message was sent directly. We will get back to you within 24 hours.`;
+            }
+            const fallbackSection = successMsg.querySelector('div[style*="border-top"]');
+            if (fallbackSection) fallbackSection.style.display = 'none';
+          }
+        }
+      } catch (err) {
+        console.warn('Web3Forms submission failed, falling back to mailto:', err);
+      }
+    }
+
+    if (!isWeb3FormsSubmitted) {
+      // Simulate processing delay for UX
+      await new Promise(r => setTimeout(r, 800));
+
+      // Open mailto link
+      window.location.href = `mailto:vikrant@vidhata.co.in?cc=info@vidhata.co.in&subject=${subjectEnc}&body=${bodyEnc}`;
+
+      // Populate fallback details
+      const fallbackText = document.getElementById('fallback-text');
+      if (fallbackText) fallbackText.value = rawBody;
+
+      const btnWaFallback = document.getElementById('btn-wa-fallback');
+      if (btnWaFallback) {
+        btnWaFallback.href = `https://wa.me/919885100808?text=${encodeURIComponent('Hello Vidhata, here is my quote request:\n\n' + rawBody)}`;
+      }
+
+      // Toggle fallback action container
+      const toggleBtn = document.getElementById('toggle-fallback');
+      const fallbackActions = document.getElementById('fallback-actions');
+      if (toggleBtn && fallbackActions) {
+        toggleBtn.onclick = () => {
+          const isHidden = fallbackActions.style.display === 'none' || fallbackActions.style.display === '';
+          fallbackActions.style.display = isHidden ? 'flex' : 'none';
+          toggleBtn.textContent = isHidden ? 'Hide Fallback Options' : "Mail App didn't open?";
+        };
+      }
+
+      // Copy action
+      const copyBtn = document.getElementById('btn-copy-fallback');
+      if (copyBtn) {
+        copyBtn.onclick = () => {
+          navigator.clipboard.writeText(rawBody).then(() => {
+            copyBtn.textContent = '✓ Copied!';
+            setTimeout(() => { copyBtn.textContent = '📋 Copy Text'; }, 2000);
+          });
+        };
+      }
+
+      if (successMsg) {
+        const fallbackSection = successMsg.querySelector('div[style*="border-top"]');
+        if (fallbackSection) fallbackSection.style.display = 'block';
+        const successDesc = successMsg.querySelector('p');
+        if (successDesc) {
+          successDesc.innerHTML = `We have opened your default mail client to dispatch your request to <strong>vikrant@vidhata.co.in</strong>.`;
+        }
+      }
     }
 
     // Show success
@@ -237,33 +291,83 @@ function initCareerForm() {
     const subjectEnc = encodeURIComponent(subject);
     const bodyEnc = encodeURIComponent(rawBody);
 
-    await new Promise(r => setTimeout(r, 800));
-    window.location.href = `mailto:info@vidhata.co.in?subject=${subjectEnc}&body=${bodyEnc}`;
+    // Attempt Web3Forms submission if key is configured
+    let isWeb3FormsSubmitted = false;
+    if (WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY !== 'YOUR_ACCESS_KEY_HERE') {
+      try {
+        const formData = new FormData();
+        formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+        formData.append('name', fields.name);
+        formData.append('email', fields.email);
+        formData.append('phone', fields.phone);
+        formData.append('position', fields.position || 'N/A');
+        formData.append('experience', fields.experience || 'N/A');
+        formData.append('cover_letter', fields.cover_letter || 'N/A');
+        formData.append('from_name', 'Vidhata Plastics Careers');
+        formData.append('subject', subject);
 
-    // Populate fallback details
-    const fallbackText = document.getElementById('career-fallback-text');
-    if (fallbackText) fallbackText.value = rawBody;
-
-    // Toggle fallback action container
-    const toggleBtn = document.getElementById('career-toggle-fallback');
-    const fallbackActions = document.getElementById('career-fallback-actions');
-    if (toggleBtn && fallbackActions) {
-      toggleBtn.onclick = () => {
-        const isHidden = fallbackActions.style.display === 'none' || fallbackActions.style.display === '';
-        fallbackActions.style.display = isHidden ? 'flex' : 'none';
-        toggleBtn.textContent = isHidden ? 'Hide Fallback Options' : "Mail App didn't open?";
-      };
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        const resData = await response.json();
+        if (resData.success) {
+          isWeb3FormsSubmitted = true;
+          if (successMsg) {
+            const successDesc = successMsg.querySelector('p');
+            if (successDesc) {
+              successDesc.innerHTML = `Your application was submitted directly. Our HR team will review it and get back to you.`;
+            }
+            const fallbackSection = successMsg.querySelector('div[style*="border-top"]');
+            if (fallbackSection) fallbackSection.style.display = 'none';
+          }
+        }
+      } catch (err) {
+        console.warn('Web3Forms career submission failed, falling back to mailto:', err);
+      }
     }
 
-    // Copy action
-    const copyBtn = document.getElementById('career-btn-copy');
-    if (copyBtn) {
-      copyBtn.onclick = () => {
-        navigator.clipboard.writeText(rawBody).then(() => {
-          copyBtn.textContent = '✓ Copied!';
-          setTimeout(() => { copyBtn.textContent = '📋 Copy to Clipboard'; }, 2000);
-        });
-      };
+    if (!isWeb3FormsSubmitted) {
+      await new Promise(r => setTimeout(r, 600));
+      window.location.href = `mailto:info@vidhata.co.in?subject=${subjectEnc}&body=${bodyEnc}`;
+
+      // Populate fallback details
+      const fallbackText = document.getElementById('career-fallback-text');
+      if (fallbackText) fallbackText.value = rawBody;
+
+      // Toggle fallback action container
+      const toggleBtn = document.getElementById('career-toggle-fallback');
+      const fallbackActions = document.getElementById('career-fallback-actions');
+      if (toggleBtn && fallbackActions) {
+        toggleBtn.onclick = () => {
+          const isHidden = fallbackActions.style.display === 'none' || fallbackActions.style.display === '';
+          fallbackActions.style.display = isHidden ? 'flex' : 'none';
+          toggleBtn.textContent = isHidden ? 'Hide Fallback Options' : "Mail App didn't open?";
+        };
+      }
+
+      // Copy action
+      const copyBtn = document.getElementById('career-btn-copy');
+      if (copyBtn) {
+        copyBtn.onclick = () => {
+          navigator.clipboard.writeText(rawBody).then(() => {
+            copyBtn.textContent = '✓ Copied!';
+            setTimeout(() => { copyBtn.textContent = '📋 Copy to Clipboard'; }, 2000);
+          });
+        };
+      }
+
+      if (successMsg) {
+        const fallbackSection = successMsg.querySelector('div[style*="border-top"]');
+        if (fallbackSection) fallbackSection.style.display = 'block';
+        const successDesc = successMsg.querySelector('p');
+        if (successDesc) {
+          successDesc.innerHTML = `Opening your default mail client to submit your application details to <strong>info@vidhata.co.in</strong>.`;
+        }
+      }
     }
 
     form.style.display = 'none';
@@ -273,10 +377,30 @@ function initCareerForm() {
   });
 }
 
+// ── URL Autofill ──────────────────────────────────────────
+function checkUrlParams() {
+  const params = new URLSearchParams(window.location.search);
+  const productName = params.get('product');
+  if (productName) {
+    const messageField = document.getElementById('q-msg');
+    const categoryField = document.getElementById('q-product');
+    
+    if (messageField) {
+      messageField.value = `Hello, I am interested in inquiring about the following medical product: ${productName}.\n\nPlease send me technical specifications, certifications, and high-volume manufacturing pricing.`;
+    }
+    
+    if (categoryField) {
+      categoryField.value = 'Medical Device';
+    }
+  }
+}
+
 // ── Init All ──────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initQuoteForm();
   initWhatsApp();
   initNewsletter();
   initCareerForm();
+  checkUrlParams();
 });
+

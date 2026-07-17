@@ -216,6 +216,7 @@ function initParticles() {
       this.speedY = -Math.random() * 0.6 - 0.2;
       this.opacity = Math.random() * 0.5 + 0.1;
       this.life = Math.random();
+      this.maxLife = Math.random() * 0.002 + 0.001;
       const randVal = Math.random();
       this.hue = randVal < 0.7 ? 199 : 215; // Sky blue or slate
     }
