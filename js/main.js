@@ -18,7 +18,7 @@ function initLoadingScreen() {
     setTimeout(() => {
       screen.classList.add('hidden');
       document.body.style.overflow = '';
-    }, 1000);
+    }, 250);
   };
 
   // If the window is already fully loaded, hide loader immediately
@@ -26,8 +26,8 @@ function initLoadingScreen() {
     hideScreen();
   } else {
     window.addEventListener('load', hideScreen);
-    // Safety Fallback: Force hide loader after 3 seconds in case window load stalls
-    setTimeout(hideScreen, 3000);
+    // Safety Fallback: Force hide loader after 1 second in case window load stalls
+    setTimeout(hideScreen, 1000);
   }
 
   document.body.style.overflow = 'hidden';
