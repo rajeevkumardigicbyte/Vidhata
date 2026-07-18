@@ -88,12 +88,28 @@ function initMagneticButtons() {
       const dx = (e.clientX - cx) * strength;
       const dy = (e.clientY - cy) * strength;
       btn.style.transform = `translate(${dx}px, ${dy}px)`;
+      
+      // 3D Parallax: Translate direct children slightly for visual depth
+      const children = btn.children;
+      for (let i = 0; i < children.length; i++) {
+        if (children[i].tagName === 'STYLE') continue;
+        children[i].style.transform = `translate(${dx * 0.35}px, ${dy * 0.35}px)`;
+        children[i].style.transition = 'none';
+      }
     });
 
     btn.addEventListener('mouseleave', () => {
       btn.style.transform = '';
-      btn.style.transition = 'transform 0.4s cubic-bezier(0.34,1.56,0.64,1)';
+      btn.style.transition = 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
       setTimeout(() => { btn.style.transition = ''; }, 400);
+      
+      // Reset children positions
+      const children = btn.children;
+      for (let i = 0; i < children.length; i++) {
+        children[i].style.transform = '';
+        children[i].style.transition = 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        setTimeout(() => { children[i].style.transition = ''; }, 400);
+      }
     });
   });
 }

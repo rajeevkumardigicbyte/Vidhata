@@ -184,9 +184,9 @@
 /* Stagger delays for children */
 [data-stagger] > * {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s var(--ease-out),
-              transform 0.6s var(--ease-out);
+  transform: translateY(35px) scale(0.97);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [data-stagger].revealed > *:nth-child(1)  { transition-delay: 0ms; }
@@ -200,7 +200,7 @@
 
 [data-stagger].revealed > * {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 /* ── Hero Entrance Animations ─────────────────────────── */
@@ -434,12 +434,16 @@
   align-items: center;
   justify-content: center;
   gap: var(--sp-6);
-  transition: opacity 0.5s var(--ease-smooth), visibility 0.5s;
+  transform: scale(1);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.6s,
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .loading-screen.hidden {
   opacity: 0;
   visibility: hidden;
+  transform: scale(1.04); /* Modern smooth zoom-out background reveal */
 }
 
 .loading-logo {

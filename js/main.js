@@ -472,13 +472,19 @@ function initTilt() {
       const rect = el.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      el.style.transform = `perspective(600px) rotateY(${x * strength}deg) rotateX(${-y * strength}deg) translateZ(6px)`;
+      
+      let transformStr = `perspective(600px) rotateY(${x * strength}deg) rotateX(${-y * strength}deg) translateZ(8px)`;
+      if (el.classList.contains('card--interactive')) {
+        transformStr += ' translateY(-8px) scale(1.02)';
+      }
+      
+      el.style.transform = transformStr;
     });
 
     el.addEventListener('mouseleave', () => {
       el.style.transform = '';
-      el.style.transition = 'transform 0.4s cubic-bezier(0.4,0,0.2,1)';
-      setTimeout(() => { el.style.transition = ''; }, 400);
+      el.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+      setTimeout(() => { el.style.transition = ''; }, 500);
     });
   });
 }
