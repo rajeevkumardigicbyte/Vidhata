@@ -58,29 +58,6 @@ const MEDICAL_PRODUCTS = [
       "Material": "Medical-grade Nylon / Polyurethane"
     }
   },
-  {
-    id: "hemodialysis-catheter-longterm",
-    title: "Hemodialysis Catheter Kit (Long Term)",
-    category: "Catheter",
-    image: "images/Catheter/hemodialysis catheter kit long term.jpg",
-    description: "An indwelling, cuffed catheter designed for long-term hemodialysis and apheresis. Features a thermosensitive, biocompatible polyurethane shaft that softens at body temperature, minimizing endothelial trauma.",
-    features: [
-      "Biocompatible, thermosensitive polyurethane softens inside the body to minimize vessel irritation.",
-      "Dual-lumen high-flow design maximizes dialysis efficiency and blood flow rates.",
-      "Suturable polyester cuff ensures rapid tissue ingrowth, locking the catheter securely in position.",
-      "Atraumatic tip design facilitates smooth insertion and reduces endothelial trauma.",
-      "Complete kit configuration includes high-quality nitinol guidewire, dilator, and scalpel.",
-      "Radiopaque construction allows for clear and precise catheter tip verification under imaging."
-    ],
-    specs: {
-      "Size": "14.5 Fr (Dual Lumen)",
-      "Catheter Lengths": "24 cm, 28 cm, 32 cm, 36 cm options",
-      "Polyester Cuff": "Promotes rapid tissue ingrowth for secure anchoring",
-      "Stylet / Dilators": "Includes dual dilator set and pre-curved stylet",
-      "Material": "Radiopaque Carbothane® Polyurethane",
-      "Sterilization": "EO Sterile"
-    }
-  },
 
   // ── Infusion ──
   {
