@@ -558,7 +558,7 @@ const MEDICAL_PRODUCTS = [
     id: "dialysis-tubing-tp",
     title: "Haemodialysis Blood Tubing (TP)",
     category: "Nephrology",
-    image: "images/Nephrology/haemodialysis blood tubings - TP.jpg",
+    image: "images/Nephrology/haemodialysis_blood_tubing_tp.png",
     description: "Premium haemodialysis bloodline set featuring integrated transducer protectors (TP). Includes hydrophobic membranes to prevent blood from entering and contaminating machine sensors.",
     features: [
       "Inline transducer protectors with 0.2 µm hydrophobic PTFE filters.",
