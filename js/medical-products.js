@@ -109,7 +109,7 @@ const MEDICAL_PRODUCTS = [
     id: "three-way-stopcock",
     title: "3-Way Stopcock",
     category: "Infusion",
-    image: "images/Infusion/3 way stock cock.jpg",
+    image: "images/Infusion/three_way_stopcock.png",
     description: "A crystal-clear, pressure-resistant three-way stopcock for simultaneous administration of multiple fluids or drug regimens. Fully rotatable handle allows 360-degree direction control without flow restriction.",
     features: [
       "Pressure-resistant polycarbonate body remains transparent and crack-free under lipid exposure.",
@@ -130,7 +130,7 @@ const MEDICAL_PRODUCTS = [
     id: "autostop-infusion-set",
     title: "Auto-Stop IV Infusion Set",
     category: "Infusion",
-    image: "images/Infusion/Auto Stop IV infusion set.jpg",
+    image: "images/Infusion/autostop_infusion_set.png",
     description: "Enforces passive patient safety via an integrated auto-stop filter membrane in the drip chamber. Automatically stops flow when the fluid container runs dry, preventing line dry-out and air entry into the bloodstream.",
     features: [
       "Innovative auto-stop membrane prevents the line from running dry once the bag is empty.",
