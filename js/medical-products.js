@@ -596,7 +596,7 @@ const MEDICAL_PRODUCTS = [
     id: "dialysis-catheter-set",
     title: "Haemodialysis Catheter and Set",
     category: "Nephrology",
-    image: "images/Nephrology/haemodialysis catheter and set.jpg",
+    image: "images/Nephrology/haemodialysis_catheter_set.png",
     description: "Acute hemodialysis catheter kit featuring a thermosensitive dual-lumen polyurethane shaft. The soft blue tip decreases friction and reduces venous vessel wall erosion.",
     features: [
       "Thermosensitive polyurethane catheter softens at body temperature.",
