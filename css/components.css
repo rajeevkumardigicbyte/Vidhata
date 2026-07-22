@@ -1494,7 +1494,6 @@ a.card--interactive:active {
   display: flex;
   flex-direction: column;
 }
-
 /* Showcase Viewport & Track */
 .hero-showcase-card__viewport {
   position: relative;
@@ -1505,6 +1504,13 @@ a.card--interactive:active {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero-slider__track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
 }
 
 .hero-slider__slide {
@@ -1519,7 +1525,7 @@ a.card--interactive:active {
 
 .hero-showcase-img {
   max-width: 100%;
-  max-height: 400px;
+  max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
