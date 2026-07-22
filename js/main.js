@@ -630,6 +630,30 @@ function initHeroSlider() {
   const track = $('#hero-slider-track');
   if (!slider || !track) return;
 
+  // Dynamically populate slides from MEDICAL_PRODUCTS if available
+  if (typeof MEDICAL_PRODUCTS !== 'undefined' && MEDICAL_PRODUCTS.length) {
+    track.innerHTML = '';
+    const uniqueImages = [];
+    MEDICAL_PRODUCTS.forEach(p => {
+      if (p.image && !uniqueImages.includes(p.image)) {
+        uniqueImages.push(p.image);
+      }
+    });
+
+    uniqueImages.forEach((imgSrc, idx) => {
+      const slide = document.createElement('div');
+      slide.className = `hero-slider__slide${idx === 0 ? ' active' : ''}`;
+      
+      const img = document.createElement('img');
+      img.src = imgSrc;
+      img.alt = "Vidhata Product";
+      img.className = "hero-showcase-img";
+      
+      slide.appendChild(img);
+      track.appendChild(slide);
+    });
+  }
+
   const slides = $$('.hero-slider__slide', track);
   const prevBtn = $('#hero-slider-prev');
   const nextBtn = $('#hero-slider-next');
