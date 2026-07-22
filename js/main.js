@@ -663,7 +663,7 @@ function initHeroSlider() {
 
   let currentIndex = 0;
   let timer = null;
-  const autoInterval = 3000; // 3 seconds smooth auto slide one by one
+  const autoInterval = 1800; // 1.8 seconds smooth auto slide one by one
 
   // Create dot indicators
   if (dotsContainer) {
