@@ -646,6 +646,27 @@ span.section-tag {
   padding-bottom: 48px !important;
 }
 
+.footer__grid--compact {
+  display: grid !important;
+  grid-template-columns: 1.35fr 1.15fr 1.35fr 1.15fr !important;
+  gap: 36px !important;
+  padding-bottom: 36px !important;
+}
+
+@media (max-width: 1024px) {
+  .footer__grid--compact {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__grid--compact {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+
 /* Footer Brand & Logo */
 .footer .navbar__logo {
   display: inline-flex !important;

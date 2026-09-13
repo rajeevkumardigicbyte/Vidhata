@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="From design to release, under one roof. Five rooms, in order: Design office, Toolroom, QC and stability lab, Cleanroom, and Dispatch. Explore Vidhata Life's end-to-end medical device manufacturing line and audit checkpoints.">
+  <title>From Design to Release, Under One Roof &mdash; Walk the Line | Vidhata Life</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css?v=serene-light-2026">
+  <link rel="stylesheet" href="css/components.css?v=serene-light-2026">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/chatbot.css?v=serene-light-2026">
+  <link rel="stylesheet" href="css/theme-neutral.css?v=serene-light-2026">
+  <style>
+    :root {
+      --wtl-navy: #0F172A;
+      --wtl-blue: #0284C7;
+      --wtl-accent: #10B981;
+      --wtl-gold: #D97706;
+      --wtl-card-bg: #FFFFFF;
+      --wtl-border: #E2E8F0;
+    }
+
+    .wtl-hero {
+      position: relative;
+      background: linear-gradient(135deg, #0A2540 0%, #0F3B68 55%, #0369A1 100%);
+      color: #FFFFFF;
+      padding: 110px 0 85px 0;
+      overflow: hidden;
+    }
+
+    .wtl-hero__bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 36px 36px;
+      pointer-events: none;
+    }
+
+    .wtl-hero__inner {
+      position: relative;
+      z-index: 2;
+      max-width: 920px;
+    }
+
+    .wtl-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(2, 132, 199, 0.25);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #BAE6FD;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .wtl-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #38BDF8;
+      box-shadow: 0 0 10px #38BDF8;
+    }
+
+    .wtl-hero__title {
+      font-size: clamp(2.3rem, 4.5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      color: #FFFFFF;
+    }
+
+    .wtl-hero__lead {
+      font-size: clamp(1.15rem, 2vw, 1.35rem);
+      line-height: 1.6;
+      color: #E2E8F0;
+      max-width: 840px;
+      font-weight: 400;
+    }
+
+    /* Stepper Navigation Strip */
+    .rooms-stepper {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--wtl-border);
+      padding: 18px 0;
+      position: sticky;
+      top: 72px;
+      z-index: 90;
+      box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05);
+    }
+
+    .rooms-stepper__list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 4px 0;
+      scrollbar-width: thin;
+    }
+
+    .rooms-stepper__item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #475569;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .rooms-stepper__item:hover {
+      background: #F1F5F9;
+      color: var(--wtl-blue);
+    }
+
+    .rooms-stepper__num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #E2E8F0;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .rooms-stepper__item:hover .rooms-stepper__num {
+      background: #0284C7;
+      color: #FFFFFF;
+    }
+
+    .rooms-stepper__arrow {
+      color: #CBD5E1;
+      font-size: 1rem;
+    }
+
+    /* Checkpoints Section */
+    .checkpoint-section {
+      padding: 70px 0;
+      border-bottom: 1px solid var(--wtl-border);
+    }
+
+    .checkpoint-section:nth-child(even) {
+      background: #F8FAFC;
+    }
+
+    .checkpoint-card {
+      background: #FFFFFF;
+      border: 1px solid var(--wtl-border);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+    }
+
+    .checkpoint-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .checkpoint-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #0284C7;
+      background: #E0F2FE;
+      padding: 5px 12px;
+      border-radius: 6px;
+    }
+
+    .checkpoint-title {
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 800;
+      color: #0F172A;
+      margin: 8px 0 14px 0;
+      letter-spacing: -0.01em;
+    }
+
+    .checkpoint-desc {
+      font-size: 1.12rem;
+      line-height: 1.65;
+      color: #334155;
+      max-width: 840px;
+      margin-bottom: 24px;
+    }
+
+    /* Document Box */
+    .checkpoint-doc {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      color: #15803D;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .checkpoint-doc svg {
+      flex-shrink: 0;
+      stroke: #16A34A;
+    }
+
+    /* Checkpoint Images Grid */
+    .checkpoint-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 10px;
+    }
+
+    .gallery-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--wtl-border);
+      background: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.1);
+    }
+
+    .gallery-img-wrap {
+      width: 100%;
+      height: 260px;
+      overflow: hidden;
+      background: #E2E8F0;
+      position: relative;
+    }
+
+    .gallery-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-card:hover .gallery-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .gallery-caption {
+      padding: 14px 18px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #1E293B;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border-top: 1px solid #F1F5F9;
+    }
+
+    .gallery-caption svg {
+      color: #0284C7;
+      flex-shrink: 0;
+    }
+
+    /* Checkpoint Metrics */
+    .checkpoint-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 14px;
+      margin-bottom: 24px;
+    }
+
+    .metric-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 20px 24px;
+      border-left: 4px solid #0284C7;
+    }
+
+    .metric-box__num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #0F172A;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .metric-box__label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #475569;
+      line-height: 1.4;
+    }
+
+    .metric-box__sub {
+      font-size: 0.82rem;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* Document Pack Callout */
+    .doc-pack-section {
+      padding: 90px 0;
+      background: linear-gradient(135deg, #0A2540 0%, #0F3B68 60%, #075985 100%);
+      color: #FFFFFF;
+    }
+
+    .doc-pack-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 50px 44px;
+      backdrop-filter: blur(12px);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .doc-pack-title {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .doc-pack-desc {
+      font-size: 1.15rem;
+      color: #E0F2FE;
+      margin-bottom: 36px;
+      max-width: 760px;
+      line-height: 1.6;
+    }
+
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .doc-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 16px 20px;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .doc-item:hover {
+      background: rgba(255, 255, 255, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .doc-item__num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #38BDF8;
+      color: #0A2540;
+      font-weight: 800;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .doc-item__title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .doc-pack-cta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .checkpoint-card {
+        padding: 24px;
+      }
+      .doc-pack-card {
+        padding: 30px 20px;
+      }
+      .rooms-stepper {
+        top: 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Reading Progress -->
+  <div id="reading-progress"
+    style="position:fixed;top:0;left:0;height:2px;background:var(--grad-primary);z-index:1001;transition:width 0.1s linear;width:0%">
+  </div>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/logo.png" alt="Vidhata Life Logo" class="navbar__logo-img" />
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-name">Vidhata Life</span>
+          <span class="navbar__logo-tagline">An SBU of Vidhata Plastics</span>
+        </div>
+      </a>
+
+      <div class="navbar__nav">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="end-to-end.html" class="navbar__link">End to end</a>
+        <a href="virexa.html" class="navbar__link">VIREXA</a>
+        <a href="contract-manufacturing.html" class="navbar__link">Contract manufacturing</a>
+        <a href="markets.html" class="navbar__link">Markets</a>
+        <a href="quality.html" class="navbar__link">Quality</a>
+        <a href="about.html" class="navbar__link">Company</a>
+        <a href="contact.html" class="navbar__link navbar__cta">Request Quote</a>
+      </div>
+      <button id="hamburger" class="navbar__hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="navbar__mobile">
+    <div class="navbar__mobile-group-title">Navigation</div>
+    <a href="index.html" class="navbar__mobile-link">Home</a>
+    <a href="end-to-end.html" class="navbar__mobile-link">End to end</a>
+    <a href="virexa.html" class="navbar__mobile-link">VIREXA</a>
+    <a href="contract-manufacturing.html" class="navbar__mobile-link">Contract manufacturing</a>
+    <a href="markets.html" class="navbar__mobile-link">Markets</a>
+    <a href="quality.html" class="navbar__mobile-link">Quality</a>
+    <a href="about.html" class="navbar__mobile-link">Company</a>
+    <div style="margin-top:var(--sp-6)">
+      <a href="contact.html" class="btn btn--primary btn--lg" style="width:100%;justify-content:center">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="wtl-hero">
+    <div class="wtl-hero__bg-grid"></div>
+    <div class="container">
+      <div class="wtl-hero__inner">
+        <div class="wtl-badge">
+          <span class="wtl-badge-dot"></span>
+          <span>Facility Line Tour &middot; Hyderabad Unit 2</span>
+        </div>
+        <h1 class="wtl-hero__title">
+          From design to release, under one roof
+        </h1>
+        <p class="wtl-hero__lead">
+          Five rooms, in order. Design, tooling, injection moulding, cleanroom assembly and sterilisation. Each room produces a document, and the documents are what you would audit.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Five Rooms Sticky Stepper Strip -->
+  <nav class="rooms-stepper" aria-label="Line Checkpoints">
+    <div class="container">
+      <div class="rooms-stepper__list">
+        <a href="#checkpoint-1" class="rooms-stepper__item">
+          <span class="rooms-stepper__num">1</span>
+          <span>Design office</span>
+        </a>
+        <span class="rooms-stepper__arrow">&rarr;</span>
+        <a href="#checkpoint-2" class="rooms-stepper__item">
+          <span class="rooms-stepper__num">2</span>
+          <span>Toolroom</span>
+        </a>
+        <span class="rooms-stepper__arrow">&rarr;</span>
+        <a href="#checkpoint-3" class="rooms-stepper__item">
+          <span class="rooms-stepper__num">3</span>
+          <span>QC and stability lab</span>
+        </a>
+        <span class="rooms-stepper__arrow">&rarr;</span>
+        <a href="#checkpoint-4" class="rooms-stepper__item">
+          <span class="rooms-stepper__num">4</span>
+          <span>Cleanroom</span>
+        </a>
+        <span class="rooms-stepper__arrow">&rarr;</span>
+        <a href="#checkpoint-5" class="rooms-stepper__item">
+          <span class="rooms-stepper__num">5</span>
+          <span>Dispatch</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Checkpoints Container -->
+  <main>
+
+    <!-- Checkpoint 1 -->
+    <section class="checkpoint-section" id="checkpoint-1">
+      <div class="container">
+        <div class="checkpoint-card">
+          <div class="checkpoint-header">
+            <div>
+              <span class="checkpoint-tag">Checkpoint 1 &middot; Room 01</span>
+              <h2 class="checkpoint-title">Design sign-off</h2>
+            </div>
+          </div>
+          <p class="checkpoint-desc">
+            Part and mould design, design-for-manufacturability and mould-flow simulation, approved before anything is tooled. Nothing is cut until the sign-off is issued.
+          </p>
+          <div class="checkpoint-doc">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+            <span>Document: the design sign-off</span>
+          </div>
+
+          <div class="checkpoint-gallery">
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="img/design-office.jpg" alt="Product and mould design at Unit 2" loading="lazy"
+                  onerror="this.onerror=null;this.src='images/3d cad/3d cad.jpg'">
+              </div>
+              <div class="gallery-caption">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                <span>Product and mould design at Unit 2</span>
+              </div>
+            </div>
+
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="img/toolroom.jpg" alt="CNC toolroom — EDM and machining" loading="lazy"
+                  onerror="this.onerror=null;this.src='img/tooling.jpg'">
+              </div>
+              <div class="gallery-caption">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                <span>CNC toolroom &mdash; EDM and machining</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checkpoint 2 -->
+    <section class="checkpoint-section" id="checkpoint-2">
+      <div class="container">
+        <div class="checkpoint-card">
+          <div class="checkpoint-header">
+            <div>
+              <span class="checkpoint-tag">Checkpoint 2 &middot; Room 02</span>
+              <h2 class="checkpoint-title">Tooling</h2>
+            </div>
+          </div>
+          <p class="checkpoint-desc">
+            The mould is cut here, prototype to hard tool, and proven on trial before it runs. The company that cuts the tool is the company that moulds the part.
+          </p>
+
+          <div class="checkpoint-metrics">
+            <div class="metric-box">
+              <div class="metric-box__num">530</div>
+              <div class="metric-box__label">moulds cut in house</div>
+              <div class="metric-box__sub">Unit 2 toolroom track record</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-box__num">6,000+</div>
+              <div class="metric-box__label">cavities</div>
+              <div class="metric-box__sub">High-cavitation precision tooling</div>
+            </div>
+          </div>
+
+          <div class="checkpoint-doc">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+            <span>Document: trial and dimensional reports</span>
+          </div>
+
+          <div class="checkpoint-gallery">
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="img/toolroom.jpg" alt="In-house Toolroom at Unit 2" loading="lazy"
+                  onerror="this.onerror=null;this.src='img/tooling.jpg'">
+              </div>
+              <div class="gallery-caption">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                <span>In-house tool design, EDM wire cutting, and high-speed CNC</span>
+              </div>
+            </div>
+
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="img/tooling.jpg" alt="Mould tooling and cavity blocks" loading="lazy">
+              </div>
+              <div class="gallery-caption">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M15 3v18"/><path d="M3 9h18"/><path d="M3 15h18"/></svg>
+                <span>Hardened multi-cavity mould trial &amp; CMM dimensional verification</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checkpoint 3 -->
+    <section class="checkpoint-section" id="checkpoint-3">
+      <div class="container">
+        <div class="checkpoint-card">
+          <div class="checkpoint-header">
+            <div>
+              <span class="checkpoint-tag">Checkpoint 3 &middot; Room 03</span>
+              <h2 class="checkpoint-title">Validation</h2>
+            </div>
+          </div>
+          <p class="checkpoint-desc">
+            We test materials and finished parts against the agreed specification. The quality and regulatory documents are written as we go, not assembled at the end.
+          </p>
+          <div class="checkpoint-doc">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+            <span>Document: the validation report</span>
+          </div>
+
+          <div class="checkpoint-gallery">
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="img/qc-lab.jpg" alt="QC and analytical laboratory" loading="lazy"
+                  onerror="this.onerror=null;this.src='img/stability.jpg'">
+              </div>
+              <div class="gallery-caption">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31M14 2v7.31M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0"/></svg>
+                <span>QC and analytical laboratory</span>
+              </div>
+            </div>
+
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="img/cleanroom.jpg" alt="Controlled cleanroom production environment" loading="lazy"
+                  onerror="this.onerror=null;this.src='img/assembly-hall.jpg'">
+              </div>
+              <div class="gallery-caption">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Controlled cleanroom production environment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checkpoint 4 -->
+    <section class="checkpoint-section" id="checkpoint-4">
+      <div class="container">
+        <div class="checkpoint-card">
+          <div class="checkpoint-header">
+            <div>
+              <span class="checkpoint-tag">Checkpoint 4 &middot; Room 04</span>
+              <h2 class="checkpoint-title">Production</h2>
+            </div>
+          </div>
+          <p class="checkpoint-desc">
+            Assembled, leak-tested, packed and sterilised inside an ISO Class 7 and 8 cleanroom, classified to ISO 14644-1, with stage QC at each step.
+          </p>
+
+          <div class="checkpoint-metrics">
+            <div class="metric-box">
+              <div class="metric-box__num">7,263 <span style="font-size:1.1rem;font-weight:600;color:#64748B">sq ft</span></div>
+              <div class="metric-box__label">cleanroom &middot; ISO Class 7 and 8</div>
+              <div class="metric-box__sub">675 m² classified environment</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-box__num">26</div>
+              <div class="metric-box__label">licensed sterile devices</div>
+              <div class="metric-box__sub">Manufactured under CDSCO MD-5 licence</div>
+            </div>
+          </div>
+
+          <div class="checkpoint-doc">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+            <span>Document: the batch record</span>
+          </div>
+
+          <div class="checkpoint-gallery">
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="img/cleanroom-moulding.jpg" alt="Cleanroom Injection Moulding" loading="lazy"
+                  onerror="this.onerror=null;this.src='img/cleanroom.jpg'">
+              </div>
+              <div class="gallery-caption">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                <span>Automated all-electric medical injection moulding</span>
+              </div>
+            </div>
+
+            <div class="gallery-card">
+              <div class="gallery-img-wrap">
+                <img src="img/assembly-hall.jpg" alt="Cleanroom manual and semi-automated assembly" loading="lazy"
+                  onerror="this.onerror=null;this.src='img/cleanroom.jpg'">
+              </div>
+              <div class="gallery-caption">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>Cleanroom assembly hall with in-process stage QC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checkpoint 5 -->
+    <section class="checkpoint-section" id="checkpoint-5">
+      <div class="container">
+        <div class="checkpoint-card">
+          <div class="checkpoint-header">
+            <div>
+              <span class="checkpoint-tag">Checkpoint 5 &middot; Room 05</span>
+              <h2 class="checkpoint-title">Dispatch</h2>
+            </div>
+          </div>
+          <p class="checkpoint-desc">
+            Released against the batch record and shipped with its inspection reports. The documents that travel with the goods are the ones you saw at the start.
+          </p>
+          <div class="checkpoint-doc">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+            <span>Document: the release record</span>
+          </div>
+
+          <div class="checkpoint-gallery">
+            <div class="gallery-card" style="max-width:680px">
+              <div class="gallery-img-wrap" style="height:320px">
+                <img src="img/leak-test.jpg" alt="Leak-test and primary packaging line" loading="lazy"
+                  onerror="this.onerror=null;this.src='images/leak and test/leak and test.jpg'">
+              </div>
+              <div class="gallery-caption">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                <span>Leak-test and primary packaging line</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Document Pack Callout Section -->
+    <section class="doc-pack-section" id="document-pack">
+      <div class="container">
+        <div class="doc-pack-card">
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(56,189,248,0.2);color:#7DD3FC;padding:5px 14px;border-radius:999px;font-size:0.85rem;font-weight:700;margin-bottom:18px;text-transform:uppercase;letter-spacing:0.06em">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Audit Transparency Pack
+          </div>
+
+          <h2 class="doc-pack-title">Ask for all six before you travel.</h2>
+          <p class="doc-pack-desc">
+            We provide full documentation ahead of your site visit so your quality and regulatory teams can audit our protocols before boarding a flight.
+          </p>
+
+          <div class="doc-grid">
+            <div class="doc-item">
+              <span class="doc-item__num">1</span>
+              <span class="doc-item__title">Manufacturing licence</span>
+            </div>
+            <div class="doc-item">
+              <span class="doc-item__num">2</span>
+              <span class="doc-item__title">Cleanroom classification report</span>
+            </div>
+            <div class="doc-item">
+              <span class="doc-item__num">3</span>
+              <span class="doc-item__title">Design sign-off</span>
+            </div>
+            <div class="doc-item">
+              <span class="doc-item__num">4</span>
+              <span class="doc-item__title">Trial and dimensional reports</span>
+            </div>
+            <div class="doc-item">
+              <span class="doc-item__num">5</span>
+              <span class="doc-item__title">Validation report</span>
+            </div>
+            <div class="doc-item">
+              <span class="doc-item__num">6</span>
+              <span class="doc-item__title">Batch record</span>
+            </div>
+          </div>
+
+          <div class="doc-pack-cta">
+            <a href="contact.html?subject=document-pack" class="btn btn--gold btn--lg" style="padding:16px 32px;font-size:1.05rem;font-weight:700">
+              <span>Request the document pack</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="quality.html" class="btn btn--outline" style="color:#FFFFFF;border-color:rgba(255,255,255,0.4);padding:16px 28px;">
+              <span>View Quality &amp; Certifications</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__grid footer__grid--compact">
+      <!-- Col 1: Brand -->
+      <div class="footer__col-brand">
+        <div class="footer__brand-title" style="font-size:1.35rem;font-weight:700;color:var(--clr-text,#1E293B);margin-bottom:10px">
+          Vidhata Life
+        </div>
+        <p class="footer__brand-desc" style="color:var(--clr-text-muted,#475569);font-size:0.9rem;line-height:1.6;margin:0;max-width:320px">
+          An SBU of Vidhata Plastics India Private Limited. Medical device and pharma packaging development and contract manufacturing, Hyderabad.
+        </p>
+      </div>
+
+      <!-- Col 2: Contact -->
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:6px;font-size:0.9rem;color:var(--clr-text-muted,#475569);line-height:1.5">
+          <div><a href="mailto:info@vidhata.co.in" style="color:var(--clr-primary,#0284C7);font-weight:600;text-decoration:none">info@vidhata.co.in</a></div>
+          <div><a href="tel:+919885100808" style="color:var(--clr-primary,#0284C7);font-weight:600;text-decoration:none">+91 98851 00808</a></div>
+          <div style="color:var(--clr-text-light,#64748B);font-size:0.84rem;margin-top:2px">Monday to Saturday, 09:00–18:00 IST (UTC+5:30)</div>
+          <div style="color:#059669;font-weight:600;font-size:0.84rem;margin-top:2px">&#10004; We reply within one working day.</div>
+        </div>
+      </div>
+
+      <!-- Col 3: Unit 2 — Maheshwaram -->
+      <div>
+        <div class="footer__col-title">Unit 2 — Maheshwaram</div>
+        <div style="display:flex;flex-direction:column;gap:6px;font-size:0.88rem;color:var(--clr-text-muted,#475569);line-height:1.55">
+          <p style="margin:0;color:var(--clr-text,#1E293B)">
+            S-1 P/C, Survey No. 114, E-City, Maheshwaram, Rangareddy, Telangana 501359
+          </p>
+          <div style="font-size:0.82rem;color:var(--clr-text-light,#64748B);margin-top:4px">
+            Toolroom, moulding, cleanroom, QC and stability lab
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 4: Unit 1 — Cherlapally -->
+      <div>
+        <div class="footer__col-title">Unit 1 — Cherlapally</div>
+        <div style="display:flex;flex-direction:column;gap:6px;font-size:0.88rem;color:var(--clr-text-muted,#475569);line-height:1.55">
+          <p style="margin:0;color:var(--clr-text,#1E293B)">
+            Plot No. 205/2, Phase II, IDA Cherlapally, Hyderabad 500051
+          </p>
+          <div style="font-size:0.82rem;color:var(--clr-text-light,#64748B);margin-top:4px">
+            Registered office
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statutory & Compliance Strip -->
+    <div class="footer__bottom" style="padding-top:24px;border-top:1px solid #DFE6EE;margin-top:0">
+      <p class="footer__legal-line" style="margin:0;font-size:0.82rem;color:#64748B;line-height:1.6;text-align:center">
+        VIDHATA PLASTICS INDIA PRIVATE LIMITED &middot; CIN U25209TG1990PTC012152 &middot; GST 36AAACV8175G1Z2 &middot; Manufacturing licence MFG/MD/2026/000078 &middot; <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy</a> &middot; <a href="about.html" style="color:inherit;text-decoration:underline">Notes for the developer</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <a href="https://wa.me/919885100808" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <button id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+
+</html>

@@ -5,15 +5,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="ISO 13485-compliant cleanroom medical device and pharmaceutical packaging manufacturing. Partner with Vidhata Plastics India.">
-  <title>Medical &amp; Pharma Manufacturing &mdash; Vidhata Plastics</title>
+    content="Twenty-six sterile single-use medical devices across six therapy areas, plus four pharma packaging formats. CDSCO Form MD-5 licence MFG/MD/2026/000078.">
+  <title>Sterile Single-Use Devices &amp; Pharma Packaging &mdash; Vidhata Life</title>
   <link rel="icon" href="images/logo.png" type="image/png">
   <link rel="stylesheet" href="css/style.css?v=serene-light-2026">
   <link rel="stylesheet" href="css/components.css?v=serene-light-2026">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/chatbot.css?v=serene-light-2026">
-  <link rel="stylesheet" href="css/infra-gallery.css">
   <link rel="stylesheet" href="css/theme-neutral.css?v=serene-light-2026">
+  <style>
+    .product-card__variants {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-left: 3px solid #0284C7;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      color: #334155;
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+    .product-card__specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+      margin-top: auto;
+    }
+    .spec-tag {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.2px;
+    }
+    .spec-tag--class {
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      color: #334155;
+    }
+    .spec-tag--sterile {
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      color: #059669;
+    }
+    .spec-tag--shelf {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      color: #475569;
+    }
+    .spec-tag--brand {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      color: #1D4ED8;
+    }
+    .pharma-pack-card {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .pharma-pack-card:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: 0 16px 36px rgba(23, 34, 59, 0.10) !important;
+      border-color: #0284C7 !important;
+    }
+    .client-pill {
+      transition: all 0.25s ease;
+    }
+    .client-pill:hover {
+      border-color: #0284C7;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.08);
+    }
+  </style>
 </head>
 
 <body>
@@ -30,303 +94,74 @@
         </div>
       </a>
       <div class="navbar__nav">
-        <a href="index.html" class="navbar__link">Home</a>
-        <a href="medical.html" class="navbar__link active">Medical &amp; Pharma</a>
-        <a href="contract-manufacturing.html" class="navbar__link">Contract Mfg</a>
-        <a href="markets.html" class="navbar__link">Markets</a>
-        <a href="end-to-end.html" class="navbar__link">End-to-end</a>
-        <a href="quality.html" class="navbar__link">Quality</a>
-        <a href="licences.html" class="navbar__link">Licences</a>
-        <div class="navbar__dropdown">
-          <a href="about.html" class="navbar__link navbar__dropdown-trigger">
-            <span>Company</span>
-            <span class="navbar__dropdown-chevron">&#9662;</span>
-          </a>
-          <div class="navbar__dropdown-menu">
-            <a href="about.html" class="navbar__dropdown-item">About Us</a>
-            <a href="case-studies.html" class="navbar__dropdown-item">Case Studies</a>
-            <a href="careers.html" class="navbar__dropdown-item">Careers</a>
-            <a href="blog.html" class="navbar__dropdown-item">Blog &amp; Insights</a>
-            <a href="clients.html" class="navbar__dropdown-item">Clients</a>
-          </div>
-        </div>
-        <a href="contact.html" class="navbar__link navbar__cta">Request Quote</a>
-      </div>
-      <button id="hamburger" class="navbar__hamburger"
+      <a href="index.html" class="navbar__link">Home</a>
+      <a href="end-to-end.html" class="navbar__link">End to end</a>
+      <a href="virexa.html" class="navbar__link">VIREXA</a>
+      <a href="contract-manufacturing.html" class="navbar__link">Contract manufacturing</a>
+      <a href="markets.html" class="navbar__link">Markets</a>
+      <a href="quality.html" class="navbar__link">Quality</a>
+      <a href="about.html" class="navbar__link">Company</a>
+      <a href="contact.html" class="navbar__link navbar__cta">Request Quote</a>
+    </div>
+    <button id="hamburger" class="navbar__hamburger"
         aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <div id="mobile-menu" class="navbar__mobile">
-    <div class="navbar__mobile-group-title">Navigation</div>
-    <a href="index.html" class="navbar__mobile-link">Home</a>
-    <a href="medical.html" class="navbar__mobile-link active">Medical &amp; Pharma</a>
-    <a href="contract-manufacturing.html" class="navbar__mobile-link">Contract Mfg</a>
-    <a href="markets.html" class="navbar__mobile-link">Markets</a>
-    <a href="end-to-end.html" class="navbar__mobile-link">End-to-end</a>
-    <a href="quality.html" class="navbar__mobile-link">Quality</a>
-    <a href="licences.html" class="navbar__mobile-link">Licences</a>
-
-    <div class="navbar__mobile-group-title">Company</div>
-    <a href="about.html" class="navbar__mobile-link">About Us</a>
-    <a href="case-studies.html" class="navbar__mobile-link">Case Studies</a>
-    <a href="clients.html" class="navbar__mobile-link">Clients</a>
-    <a href="careers.html" class="navbar__mobile-link">Careers</a>
-    <a href="blog.html" class="navbar__mobile-link">Blog &amp; Insights</a>
-    <a href="contact.html" class="navbar__mobile-link">Contact Us</a>
-    <div style="margin-top:var(--sp-6)">
-      <a href="contact.html" class="btn btn--primary btn--lg" style="width:100%;justify-content:center">Request a
-        Quote</a>
-    </div>
+  <div class="navbar__mobile-group-title">Navigation</div>
+  <a href="index.html" class="navbar__mobile-link">Home</a>
+  <a href="end-to-end.html" class="navbar__mobile-link">End to end</a>
+  <a href="virexa.html" class="navbar__mobile-link">VIREXA</a>
+  <a href="contract-manufacturing.html" class="navbar__mobile-link">Contract manufacturing</a>
+  <a href="markets.html" class="navbar__mobile-link">Markets</a>
+  <a href="quality.html" class="navbar__mobile-link">Quality</a>
+  <a href="about.html" class="navbar__mobile-link">Company</a>
+  <div style="margin-top:var(--sp-6)">
+    <a href="contact.html" class="btn btn--primary btn--lg" style="width:100%;justify-content:center">Request a Quote</a>
   </div>
+</div>
 
   <section class="page-hero">
     <div class="orb orb--blue orb--1"></div>
     <div class="orb orb--gold orb--2"></div>
     <div class="bg-grid bg-grid--fade"></div>
     <div class="container">
-      <div class="page-hero__breadcrumb"><a href="index.html">Home</a><span>&rsaquo;</span><span>Medical &amp;
-          Pharma</span></div>
-      <div class="section-label section-label--gold hero-anim-1">ISO 13485 Compliant</div>
-      <h1 class="hero-anim-2" style="max-width:700px">Cleanroom Medical<br><span class="gradient-text--gold">Device
-          Manufacturing</span></h1>
-      <p class="hero-anim-3"
-        style="font-size:var(--fs-md);max-width:580px;color:var(--clr-text-muted);margin-top:var(--sp-5)">Dedicated
-        cleanroom capabilities matching international medical grade regulatory standards.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-16);align-items:center"
-        class="medical-intro-grid">
-        <div data-reveal="right">
-          <div class="section-label">Medical Division</div>
-          <h2 style="margin-bottom:var(--sp-6)">ISO Class 7 &amp; 8 Cleanroom Infrastructure</h2>
-          <p style="margin-bottom:var(--sp-5)">Vidhata Plastics operates a state-of-the-art cleanroom specifically
-            designed to meet the rigorous quality standards of medical device components and pharmaceutical packaging.
-          </p>
-          <p style="margin-bottom:var(--sp-8)">Our facility prevents particulate contamination, ensuring bio-burden
-            control and sterility. Every worker undergoes strict gowning procedures before entering the controlled
-            production space.</p>
-          <div style="display:flex;gap:var(--sp-4);flex-wrap:wrap;justify-content:flex-start">
-            <a href="quality.html" class="btn btn--gold btn--lg">Quality Certifications</a>
-            <a href="contact.html" class="btn btn--outline btn--lg">Request Medical Consultation</a>
-          </div>
-        </div>
-        <div data-reveal="left">
-          <div class="infra-gallery-wrap" id="medInfraWrap">
-            <div class="infra-gallery" id="medInfraGallery">
-              <div class="infra-slide infra-slide--active">
-                <img src="images/clean-room/class-08.jpg" alt="ISO Class 8 Manufacturing Floor"
-                  class="infra-slide__img">
-                <div class="infra-slide__shimmer"></div>
-                <div class="infra-slide__vignette"></div>
-
-              </div>
-              <div class="infra-slide">
-                <img src="images/clean-room/class - 7.jpg" alt="ISO Class 7 Medical Assembly" class="infra-slide__img">
-                <div class="infra-slide__shimmer"></div>
-                <div class="infra-slide__vignette"></div>
-
-              </div>
-              <div class="infra-slide">
-                <img src="images/clean-room/class-8.jpg" alt="ISO Class 8 Injection Moulding" class="infra-slide__img">
-                <div class="infra-slide__shimmer"></div>
-                <div class="infra-slide__vignette"></div>
-
-              </div>
-              <div class="infra-slide">
-                <img src="images/clean-room/class8.jpg" alt="ISO Class 8 Facility Overview" class="infra-slide__img">
-                <div class="infra-slide__shimmer"></div>
-                <div class="infra-slide__vignette"></div>
-
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="page-hero__breadcrumb"><a href="index.html">Home</a><span>&rsaquo;</span><span>Medical &amp; Pharma Devices</span></div>
+      <div class="section-label section-label--gold hero-anim-1">Sterile single-use devices &amp; pharma packaging</div>
+      <h1 class="hero-anim-2" style="max-width:850px">What we are licensed to make.</h1>
+      <p class="hero-anim-3" style="font-size:var(--fs-md);max-width:760px;color:var(--clr-text);margin-top:var(--sp-4);font-weight:500;line-height:var(--lh-relaxed)">
+        Twenty-six sterile single-use medical devices across six therapy areas, plus four pharma packaging formats. Every one is tooled, documented and audited here.
+      </p>
+      <p class="hero-anim-3" style="font-size:var(--fs-sm);max-width:760px;color:var(--clr-text-muted);margin-top:var(--sp-3);line-height:var(--lh-relaxed)">
+        Available under our own VIREXA brand, or made under your brand on the same line. Find the one closest to your part &mdash; if it is on this page, the tooling, the validation and the regulatory file already exist.
+      </p>
+      <div style="display:flex;gap:var(--sp-3);flex-wrap:wrap;margin-top:var(--sp-6)">
+        <span class="badge badge--outline" style="font-size:0.8rem;padding:6px 14px;background:rgba(255,255,255,0.7);border-color:#CBD5E1;color:#1E293B;font-weight:600">CDSCO Form MD-5: MFG/MD/2026/000078</span>
+        <span class="badge badge--outline" style="font-size:0.8rem;padding:6px 14px;background:rgba(255,255,255,0.7);border-color:#CBD5E1;color:#1E293B;font-weight:600">26 Class B Sterile Devices</span>
+        <span class="badge badge--outline" style="font-size:0.8rem;padding:6px 14px;background:rgba(255,255,255,0.7);border-color:#CBD5E1;color:#1E293B;font-weight:600">ISO 13485:2016 Certified Cleanroom</span>
+        <span class="badge badge--outline" style="font-size:0.8rem;padding:6px 14px;background:rgba(255,255,255,0.7);border-color:#CBD5E1;color:#1E293B;font-weight:600">Unit 2 Maheshwaram Campus</span>
       </div>
     </div>
   </section>
 
-  <section class="section section--alt">
+  <!-- Sterile Devices Catalog -->
+  <section class="section" id="product-showcase" style="padding-top:var(--sp-12)">
     <div class="container">
-      <div class="section-header--center" data-reveal="up">
-        <div class="section-label section-label--gold">Capabilities</div>
-        <h2>Cleanroom Specific Capabilities</h2>
-      </div>
-      <div class="grid-3" data-stagger>
-        <!-- 1. Cleanroom Moulding -->
-        <a href="cleanroom-moulding.html" class="card card--gold" data-3d="8" data-glow-color="rgba(224, 176, 52, 0.15)"
-          style="display:block;text-decoration:none">
-          <div class="card-glow"
-            style="position:absolute;inset:0;border-radius:inherit;pointer-events:none;transition:background 0.3s">
-          </div>
-          <div
-            style="font-size:2.5rem;margin-bottom:var(--sp-4);filter:drop-shadow(0 4px 10px rgba(224, 176, 52, 0.25))">
-            &#128137;</div>
-          <h4 style="margin-bottom:var(--sp-2);color:var(--clr-text)">Cleanroom Moulding</h4>
-          <p
-            style="font-size:var(--fs-sm);color:var(--clr-text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--sp-4)">
-            High precision injection moulding inside Class 10,000 / Class 100,000 controlled cleanrooms to produce
-            zero-contamination medical components.
-          </p>
-          <span
-            style="font-size:var(--fs-xs);color:#0284c7;font-weight:700;display:inline-flex;align-items:center;gap:4px">
-            Explore Cleanroom Moulding &rarr;
-          </span>
-        </a>
-
-        <!-- 2. Extruders -->
-        <a href="extruders.html" class="card card--blue" data-3d="8" data-glow-color="rgba(14, 165, 233, 0.15)"
-          style="display:block;text-decoration:none">
-          <div class="card-glow"
-            style="position:absolute;inset:0;border-radius:inherit;pointer-events:none;transition:background 0.3s">
-          </div>
-          <div
-            style="font-size:2.5rem;margin-bottom:var(--sp-4);filter:drop-shadow(0 4px 10px rgba(14, 165, 233, 0.25))">
-            &#x2699;</div>
-          <h4 style="margin-bottom:var(--sp-2);color:var(--clr-text)">Extruders</h4>
-          <p
-            style="font-size:var(--fs-sm);color:var(--clr-text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--sp-4)">
-            Advanced multi-lumen tubing extruders with automated inline <strong>Tube Monitoring</strong> systems
-            measuring wall thickness, concentricity, and outer diameter.
-          </p>
-          <span
-            style="font-size:var(--fs-xs);color:#0284c7;font-weight:700;display:inline-flex;align-items:center;gap:4px">
-            Explore Extruders &rarr;
-          </span>
-        </a>
-
-        <!-- 3. Assembly & Packaging -->
-        <a href="assembly-packaging.html" class="card card--gold" data-3d="8" data-glow-color="rgba(224, 176, 52, 0.15)"
-          style="display:block;text-decoration:none">
-          <div class="card-glow"
-            style="position:absolute;inset:0;border-radius:inherit;pointer-events:none;transition:background 0.3s">
-          </div>
-          <div
-            style="font-size:2.5rem;margin-bottom:var(--sp-4);filter:drop-shadow(0 4px 10px rgba(224, 176, 52, 0.25))">
-            &#128295;</div>
-          <h4 style="margin-bottom:var(--sp-2);color:var(--clr-text)">Assembly &amp; Packaging</h4>
-          <p
-            style="font-size:var(--fs-sm);color:var(--clr-text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--sp-4)">
-            Manual, semi-automated assembly, and heat sealing medical packaging in sterile conditions under class 10,000
-            protocols.
-          </p>
-          <span
-            style="font-size:var(--fs-xs);color:#0284c7;font-weight:700;display:inline-flex;align-items:center;gap:4px">
-            Explore Assembly &amp; Packaging &rarr;
-          </span>
-        </a>
-
-        <!-- 4. Leak & Flow Testing -->
-        <a href="leak-flow-testing.html" class="card card--blue" data-3d="8" data-glow-color="rgba(14, 165, 233, 0.15)"
-          style="display:block;text-decoration:none">
-          <div class="card-glow"
-            style="position:absolute;inset:0;border-radius:inherit;pointer-events:none;transition:background 0.3s">
-          </div>
-          <div
-            style="font-size:2.5rem;margin-bottom:var(--sp-4);filter:drop-shadow(0 4px 10px rgba(14, 165, 233, 0.25))">
-            &#129514;</div>
-          <h4 style="margin-bottom:var(--sp-2);color:var(--clr-text)">Leak &amp; Flow Testing</h4>
-          <p
-            style="font-size:var(--fs-sm);color:var(--clr-text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--sp-4)">
-            Advanced automated decay testing and structural leak testing for IV tubing, cassettes, bags, and drug
-            delivery systems.
-          </p>
-          <span
-            style="font-size:var(--fs-xs);color:#0284c7;font-weight:700;display:inline-flex;align-items:center;gap:4px">
-            Explore Leak &amp; Flow Testing &rarr;
-          </span>
-        </a>
-
-        <!-- 5. Sterilization -->
-        <a href="sterilization.html" class="card card--green" data-3d="8" data-glow-color="rgba(16, 185, 129, 0.15)"
-          style="display:block;text-decoration:none">
-          <div class="card-glow"
-            style="position:absolute;inset:0;border-radius:inherit;pointer-events:none;transition:background 0.3s">
-          </div>
-          <div
-            style="font-size:2.5rem;margin-bottom:var(--sp-4);filter:drop-shadow(0 4px 10px rgba(16, 185, 129, 0.25))">
-            &#10024;</div>
-          <h4 style="margin-bottom:var(--sp-2);color:var(--clr-text)">Sterilization</h4>
-          <div
-            style="font-size:var(--fs-sm);color:var(--clr-text-muted);line-height:var(--lh-relaxed);text-align:left;display:flex;flex-direction:column;gap:var(--sp-2);margin-bottom:var(--sp-4)">
-            <div>
-              <strong style="color:var(--clr-success);display:block;margin-bottom:2px">&#10004; Sterile
-                Products</strong>
-              Double-barrier Tyvek pouching and validation pathways for ETO or Gamma sterilization.
-            </div>
-            <div style="border-top:1px solid rgba(226, 232, 240, 0.3);padding-top:var(--sp-2)">
-              <strong style="color:var(--clr-text);display:block;margin-bottom:2px">&#10004; Non-Sterile
-                Products</strong>
-              Class 10,000 molded bulk components under controlled bioburden standards.
-            </div>
-          </div>
-          <span
-            style="font-size:var(--fs-xs);color:#059669;font-weight:700;display:inline-flex;align-items:center;gap:4px">
-            Explore Sterilization &rarr;
-          </span>
-        </a>
-
-        <!-- 6. FG (Finished Goods) -->
-        <a href="finished-goods.html" class="card card--red" data-3d="8" data-glow-color="rgba(212, 33, 61, 0.15)"
-          style="display:block;text-decoration:none">
-          <div class="card-glow"
-            style="position:absolute;inset:0;border-radius:inherit;pointer-events:none;transition:background 0.3s">
-          </div>
-          <div
-            style="font-size:2.5rem;margin-bottom:var(--sp-4);filter:drop-shadow(0 4px 10px rgba(212, 33, 61, 0.25))">
-            &#x1F4E6;</div>
-          <h4 style="margin-bottom:var(--sp-2);color:var(--clr-text)"> Store </h4>
-          <p
-            style="font-size:var(--fs-sm);color:var(--clr-text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--sp-4)">
-            Comprehensive management of <strong>Finished Goods</strong>, structured under batch master record
-            compliance, sterile barrier validation, and direct-to-distribution shipping.
-          </p>
-          <span
-            style="font-size:var(--fs-xs);color:#dc2626;font-weight:700;display:inline-flex;align-items:center;gap:4px">
-            Explore Finished Goods &rarr;
-          </span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="product-showcase">
-    <div class="container">
-      <div class="section-header--center" data-reveal="up">
-        <div class="section-label section-label--gold">Sterile Single-Use Devices &amp; Pharma Packaging</div>
-        <h2>What We Are Licensed to Make</h2>
-        <p
-          style="max-width:760px;margin:var(--sp-2) auto var(--sp-3);color:var(--clr-text);font-size:var(--fs-base);line-height:var(--lh-relaxed)">
-          Sterile single-use medical devices tooled, documented and audited here under CDSCO Form MD-5 licence
-          <strong>MFG/MD/2026/000078</strong>.
-        </p>
-        <p
-          style="max-width:720px;margin:0 auto var(--sp-8);color:var(--clr-text-muted);font-size:var(--fs-sm);line-height:var(--lh-relaxed)">
-          Available under our own <a href="virexa.html"
-            style="color:var(--clr-primary);font-weight:600;text-decoration:underline">VIREXA brand</a>, or made under
-          your brand on the same line &mdash; as <a href="contract-manufacturing.html"
-            style="color:var(--clr-primary);font-weight:600;text-decoration:underline">OEM contract manufacture or loan
-            licence</a> at our premises.
-        </p>
-      </div>
-
-      <!-- Category Tabs -->
+      <!-- Category Filter Tabs -->
       <div class="catalog-tabs-container catalog-tabs-container--scrollable" data-reveal="up">
         <div class="catalog-tabs" id="catalog-tabs">
           <div class="catalog-tabs__glider" id="catalog-glider"></div>
-          <button class="catalog-tab active" data-category="all">All 26 Devices</button>
-          <button class="catalog-tab" data-category="infusion">Infusion Therapy</button>
-          <button class="catalog-tab" data-category="nephrology">Nephrology &amp; Dialysis</button>
-          <button class="catalog-tab" data-category="lines">Lines &amp; Accessories</button>
+          <button class="catalog-tab active" data-category="all">All 26</button>
+          <button class="catalog-tab" data-category="infusion">Infusion therapy</button>
+          <button class="catalog-tab" data-category="nephrology">Nephrology &amp; dialysis</button>
+          <button class="catalog-tab" data-category="lines">Lines &amp; accessories</button>
           <button class="catalog-tab" data-category="oncology">Oncology</button>
-          <button class="catalog-tab" data-category="critical">Critical Care &amp; Monitoring</button>
-          <button class="catalog-tab" data-category="cardiac">Cardiac Surgery</button>
+          <button class="catalog-tab" data-category="critical">Critical care</button>
+          <button class="catalog-tab" data-category="cardiac">Cardiac surgery</button>
         </div>
       </div>
 
-      <!-- Product Grid -->
+      <!-- Dynamic Product Grid populated by medical-products.js -->
       <div class="catalog-grid" id="catalog-grid"></div>
     </div>
   </section>
@@ -335,89 +170,82 @@
   <section class="section section--alt" id="pharma-packaging">
     <div class="container">
       <div class="section-header--center" data-reveal="up">
-        <div class="section-label section-label--gold">Dosage Formats</div>
-        <h2>Pharma Packaging, by Dosage Form</h2>
-        <p style="max-width:640px;margin:var(--sp-2) auto var(--sp-8);color:var(--clr-text-muted)">
+        <div class="section-label section-label--gold">Pharma Packaging</div>
+        <h2>Pharma packaging, by dosage form.</h2>
+        <p style="max-width:680px;margin:var(--sp-2) auto var(--sp-8);color:var(--clr-text-muted);font-size:var(--fs-base)">
           Tooled in our own room, at the cavitation that keeps your unit cost where it needs to be.
         </p>
       </div>
 
       <div class="grid-4" data-stagger>
         <!-- 1. Ophthalmic -->
-        <div class="card card--glass"
-          style="display:flex;flex-direction:column;overflow:hidden;border-radius:var(--radius-xl);padding:var(--sp-6)">
+        <div class="card card--glass pharma-pack-card" data-reveal="up"
+          style="display:flex;flex-direction:column;overflow:hidden;border-radius:18px;padding:24px;background:#FFFFFF;border:1.5px solid #DFE6EE;box-shadow:0 4px 18px rgba(23,34,59,0.05)">
           <div
-            style="height:180px;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:var(--sp-4);background:rgba(2,132,199,0.05);display:flex;align-items:center;justify-content:center">
-            <img src="images/medical-products.png" alt="Ophthalmic Packaging"
-              style="max-height:100%;object-fit:contain">
+            style="height:190px;border-radius:12px;overflow:hidden;margin-bottom:16px;background:#F8FAFD;border:1px solid #EDF2F7;display:flex;align-items:center;justify-content:center;padding:12px">
+            <img src="img/packaging/ophthalmic.jpg" alt="Ophthalmic Packaging"
+              style="max-height:100%;max-width:100%;object-fit:contain;mix-blend-mode:multiply">
           </div>
-          <span class="product-card__badge" style="margin-bottom:var(--sp-2)">Packaging Format</span>
-          <h3 style="font-size:var(--fs-lg);margin-bottom:var(--sp-2);color:var(--clr-text)">Ophthalmic</h3>
-          <p
-            style="font-size:var(--fs-sm);color:var(--clr-text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--sp-4);flex-grow:1">
-            Droppers, nozzles and unscrewing caps engineered with ultra-precise orifice geometry for calibrated drop
-            volume.
+          <span class="product-card__badge" style="margin-bottom:10px">Packaging Format</span>
+          <h3 style="font-size:1.15rem;margin-bottom:8px;color:#1E293B;font-family:var(--font-heading);font-weight:700">Ophthalmic</h3>
+          <p style="font-size:0.9rem;color:#5F6B7A;line-height:1.55;margin-bottom:16px;flex-grow:1">
+            Droppers, nozzles and unscrewing caps.
           </p>
-          <div style="font-size:var(--fs-xs);color:var(--clr-primary);font-weight:var(--fw-semi)">
+          <div style="font-size:0.75rem;color:#0284C7;font-weight:600;padding-top:10px;border-top:1px solid #F1F5F9">
             High-speed multi-cavity tooling &middot; Cleanroom moulded
           </div>
         </div>
 
         <!-- 2. Oral-dose closures -->
-        <div class="card card--glass"
-          style="display:flex;flex-direction:column;overflow:hidden;border-radius:var(--radius-xl);padding:var(--sp-6)">
+        <div class="card card--glass pharma-pack-card" data-reveal="up"
+          style="display:flex;flex-direction:column;overflow:hidden;border-radius:18px;padding:24px;background:#FFFFFF;border:1.5px solid #DFE6EE;box-shadow:0 4px 18px rgba(23,34,59,0.05)">
           <div
-            style="height:180px;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:var(--sp-4);background:rgba(2,132,199,0.05);display:flex;align-items:center;justify-content:center">
-            <img src="images/Component/Component2.jpg" alt="Oral-dose closures"
-              style="max-height:100%;object-fit:contain">
+            style="height:190px;border-radius:12px;overflow:hidden;margin-bottom:16px;background:#F8FAFD;border:1px solid #EDF2F7;display:flex;align-items:center;justify-content:center;padding:12px">
+            <img src="img/packaging/closures.jpg" alt="Oral-dose closures"
+              style="max-height:100%;max-width:100%;object-fit:contain;mix-blend-mode:multiply">
           </div>
-          <span class="product-card__badge" style="margin-bottom:var(--sp-2)">Packaging Format</span>
-          <h3 style="font-size:var(--fs-lg);margin-bottom:var(--sp-2);color:var(--clr-text)">Oral-Dose Closures</h3>
-          <p
-            style="font-size:var(--fs-sm);color:var(--clr-text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--sp-4);flex-grow:1">
-            Child-resistant, 24 to 53 mm closures, up to 32 cavity. Engineered for tamper evidence and torque
-            consistency.
+          <span class="product-card__badge" style="margin-bottom:10px">Packaging Format</span>
+          <h3 style="font-size:1.15rem;margin-bottom:8px;color:#1E293B;font-family:var(--font-heading);font-weight:700">Oral-dose closures</h3>
+          <p style="font-size:0.9rem;color:#5F6B7A;line-height:1.55;margin-bottom:16px;flex-grow:1">
+            Child-resistant, 24 to 53 mm, up to 32 cavity.
           </p>
-          <div style="font-size:var(--fs-xs);color:var(--clr-primary);font-weight:var(--fw-semi)">
+          <div style="font-size:0.75rem;color:#0284C7;font-weight:600;padding-top:10px;border-top:1px solid #F1F5F9">
             24 to 53 mm &middot; Up to 32 cavity
           </div>
         </div>
 
         <!-- 3. Parenteral seals -->
-        <div class="card card--glass"
-          style="display:flex;flex-direction:column;overflow:hidden;border-radius:var(--radius-xl);padding:var(--sp-6)">
+        <div class="card card--glass pharma-pack-card" data-reveal="up"
+          style="display:flex;flex-direction:column;overflow:hidden;border-radius:18px;padding:24px;background:#FFFFFF;border:1.5px solid #DFE6EE;box-shadow:0 4px 18px rgba(23,34,59,0.05)">
           <div
-            style="height:180px;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:var(--sp-4);background:rgba(2,132,199,0.05);display:flex;align-items:center;justify-content:center">
-            <img src="images/Precision/Precision1.jpg" alt="Parenteral seals"
-              style="max-height:100%;object-fit:contain">
+            style="height:190px;border-radius:12px;overflow:hidden;margin-bottom:16px;background:#F8FAFD;border:1px solid #EDF2F7;display:flex;align-items:center;justify-content:center;padding:12px">
+            <img src="img/packaging/flip-off-seals.jpg" alt="Parenteral seals"
+              style="max-height:100%;max-width:100%;object-fit:contain;mix-blend-mode:multiply">
           </div>
-          <span class="product-card__badge" style="margin-bottom:var(--sp-2)">Packaging Format</span>
-          <h3 style="font-size:var(--fs-lg);margin-bottom:var(--sp-2);color:var(--clr-text)">Parenteral Seals</h3>
-          <p
-            style="font-size:var(--fs-sm);color:var(--clr-text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--sp-4);flex-grow:1">
-            13 and 20 mm flip-off seals at 48 cavity. Zero-flash injection molding ensuring sterile vial seal integrity.
+          <span class="product-card__badge" style="margin-bottom:10px">Packaging Format</span>
+          <h3 style="font-size:1.15rem;margin-bottom:8px;color:#1E293B;font-family:var(--font-heading);font-weight:700">Parenteral seals</h3>
+          <p style="font-size:0.9rem;color:#5F6B7A;line-height:1.55;margin-bottom:16px;flex-grow:1">
+            13 and 20 mm flip-off seals, 48 cavity.
           </p>
-          <div style="font-size:var(--fs-xs);color:var(--clr-primary);font-weight:var(--fw-semi)">
+          <div style="font-size:0.75rem;color:#0284C7;font-weight:600;padding-top:10px;border-top:1px solid #F1F5F9">
             13 &amp; 20 mm &middot; 48 cavity tooling
           </div>
         </div>
 
         <!-- 4. Blood collection -->
-        <div class="card card--glass"
-          style="display:flex;flex-direction:column;overflow:hidden;border-radius:var(--radius-xl);padding:var(--sp-6)">
+        <div class="card card--glass pharma-pack-card" data-reveal="up"
+          style="display:flex;flex-direction:column;overflow:hidden;border-radius:18px;padding:24px;background:#FFFFFF;border:1.5px solid #DFE6EE;box-shadow:0 4px 18px rgba(23,34,59,0.05)">
           <div
-            style="height:180px;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:var(--sp-4);background:rgba(2,132,199,0.05);display:flex;align-items:center;justify-content:center">
-            <img src="images/High volume/High volume4.jpg" alt="Blood collection"
-              style="max-height:100%;object-fit:contain">
+            style="height:190px;border-radius:12px;overflow:hidden;margin-bottom:16px;background:#F8FAFD;border:1px solid #EDF2F7;display:flex;align-items:center;justify-content:center;padding:12px">
+            <img src="img/packaging/blood-collection.jpg" alt="Blood collection"
+              style="max-height:100%;max-width:100%;object-fit:contain;mix-blend-mode:multiply">
           </div>
-          <span class="product-card__badge" style="margin-bottom:var(--sp-2)">Packaging Format</span>
-          <h3 style="font-size:var(--fs-lg);margin-bottom:var(--sp-2);color:var(--clr-text)">Blood Collection</h3>
-          <p
-            style="font-size:var(--fs-sm);color:var(--clr-text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--sp-4);flex-grow:1">
-            Blood-collection tubes, caps, and canisters manufactured with optical-grade polymers and leak-resistant
-            closures.
+          <span class="product-card__badge" style="margin-bottom:10px">Packaging Format</span>
+          <h3 style="font-size:1.15rem;margin-bottom:8px;color:#1E293B;font-family:var(--font-heading);font-weight:700">Blood collection</h3>
+          <p style="font-size:0.9rem;color:#5F6B7A;line-height:1.55;margin-bottom:16px;flex-grow:1">
+            Blood-collection tubes and canisters.
           </p>
-          <div style="font-size:var(--fs-xs);color:var(--clr-primary);font-weight:var(--fw-semi)">
+          <div style="font-size:0.75rem;color:#0284C7;font-weight:600;padding-top:10px;border-top:1px solid #F1F5F9">
             Optical PET / PP &middot; Vacuum-tested
           </div>
         </div>
@@ -425,201 +253,116 @@
     </div>
   </section>
 
-  <!-- Product Details Modal -->
-  <div class="product-modal" id="product-modal" style="display: none;">
-    <!-- Modal content structured dynamically via JS -->
-  </div>
-
-  <!-- Healthcare Clients -->
-  <section class="section section--alt">
+  <!-- Healthcare Customers Strip -->
+  <section class="section" style="padding:var(--sp-12) 0;background:#FFFFFF;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0">
     <div class="container">
-      <div class="section-header--center" data-reveal="up">
-        <div class="section-label">Partners</div>
-        <h2>Healthcare Customers</h2>
+      <div class="section-header--center" data-reveal="up" style="margin-bottom:var(--sp-6)">
+        <div class="section-label section-label--gold">Client Partnerships</div>
+        <h2 style="font-size:1.6rem">Already making for</h2>
       </div>
-      <div class="grid-5 medical-clients-grid" style="text-align:center" data-stagger>
-        <div class="card card--glass"
-          style="padding:var(--sp-6);font-family:var(--font-heading);font-weight:var(--fw-bold);color:var(--clr-text)">
-          NephroPlus</div>
-        <div class="card card--glass"
-          style="padding:var(--sp-6);font-family:var(--font-heading);font-weight:var(--fw-bold);color:var(--clr-text)">
-          Cathronic Medical</div>
-        <div class="card card--glass"
-          style="padding:var(--sp-6);font-family:var(--font-heading);font-weight:var(--fw-bold);color:var(--clr-text)">
-          East Pharma Technologies</div>
-        <div class="card card--glass"
-          style="padding:var(--sp-6);font-family:var(--font-heading);font-weight:var(--fw-bold);color:var(--clr-text)">
-          Key Care Drugs</div>
-        <div class="card card--glass"
-          style="padding:var(--sp-6);font-family:var(--font-heading);font-weight:var(--fw-bold);color:var(--clr-text)">
-          Pravesha</div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px;max-width:960px;margin:0 auto" data-reveal="up">
+        <div class="card card--glass client-pill" style="padding:16px 28px;border-radius:14px;background:#F8FAFC;border:1.5px solid #E2E8F0;font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:#1E293B;box-shadow:0 2px 8px rgba(0,0,0,0.03)">
+          NephroPlus
+        </div>
+        <div class="card card--glass client-pill" style="padding:16px 28px;border-radius:14px;background:#F8FAFC;border:1.5px solid #E2E8F0;font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:#1E293B;box-shadow:0 2px 8px rgba(0,0,0,0.03)">
+          Cathronic Medical
+        </div>
+        <div class="card card--glass client-pill" style="padding:16px 28px;border-radius:14px;background:#F8FAFC;border:1.5px solid #E2E8F0;font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:#1E293B;box-shadow:0 2px 8px rgba(0,0,0,0.03)">
+          East Pharma Technologies
+        </div>
+        <div class="card card--glass client-pill" style="padding:16px 28px;border-radius:14px;background:#F8FAFC;border:1.5px solid #E2E8F0;font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:#1E293B;box-shadow:0 2px 8px rgba(0,0,0,0.03)">
+          Key Care Drugs
+        </div>
+        <div class="card card--glass client-pill" style="padding:16px 28px;border-radius:14px;background:#F8FAFC;border:1.5px solid #E2E8F0;font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:#1E293B;box-shadow:0 2px 8px rgba(0,0,0,0.03)">
+          Pravesha
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Talk to us about your part CTA -->
+  <section class="section" id="talk-to-us" style="padding:var(--sp-16) 0;background:linear-gradient(180deg,#F8FAFC 0%,#F0F7FD 100%)">
+    <div class="container">
+      <div class="card card--glass" data-reveal="up" style="max-width:920px;margin:0 auto;padding:var(--sp-12);text-align:center;border-radius:24px;background:#FFFFFF;border:1.5px solid #CBD5E1;box-shadow:0 12px 36px rgba(10,37,64,0.08)">
+        <div class="section-label section-label--gold" style="margin-bottom:var(--sp-3)">Next Steps</div>
+        <h2 style="font-size:2.25rem;margin-bottom:var(--sp-4);color:#0F172A">Talk to us about your part</h2>
+        <p style="max-width:680px;margin:0 auto var(--sp-8);color:#475569;font-size:1.05rem;line-height:1.65">
+          Available under our own VIREXA brand, or made under your brand on the same line &mdash; as OEM contract manufacture or loan licence at our premises. Find the one closest to your part: the tooling, validation and regulatory files already exist.
+        </p>
+        <div style="display:flex;gap:var(--sp-4);justify-content:center;flex-wrap:wrap">
+          <a href="contact.html" class="btn btn--primary btn--lg" style="padding:14px 32px;font-size:1rem;box-shadow:0 4px 16px rgba(2,132,199,0.3)">
+            Request Technical Quote &rarr;
+          </a>
+          <a href="tel:+919885100808" class="btn btn--outline btn--lg" style="padding:14px 28px;font-size:1rem">
+            Call Regulated SBU: +91 98851 00808
+          </a>
+          <a href="quality.html" class="btn btn--ghost btn--lg" style="padding:14px 24px;font-size:1rem">
+            Review ISO 13485 &amp; MD-5 Licence
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <!-- Col 1: Brand & Certifications -->
-        <div>
-          <a href="index.html" class="navbar__logo" style="margin-bottom:14px;display:inline-flex">
-            <img src="images/logo.png" alt="Vidhata Life Logo" class="navbar__logo-img" />
-            <div class="navbar__logo-text">
-              <span class="navbar__logo-name">Vidhata Life</span>
-              <span class="navbar__logo-tagline">An SBU of Vidhata Plastics</span>
-            </div>
-          </a>
-          <p class="footer__brand-desc">
-            The medical device and pharma packaging business of Vidhata Plastics India Private Limited. Delivering
-            world-class cleanroom injection moulding, precision tooling, and contract manufacturing solutions since
-            1990.
-          </p>
-          <div class="footer__certbadges">
-            <a href="licences.html" class="footer__certbadge">CDSCO MD-5</a>
-            <a href="licences.html" class="footer__certbadge">ISO 13485:2016</a>
-            <a href="licences.html" class="footer__certbadge">ISO 9001:2015</a>
-            <a href="licences.html" class="footer__certbadge">CE</a>
-            <a href="licences.html" class="footer__certbadge">QMSR</a>
-          </div>
-          <div class="footer__sla">
-            We reply within one working day.
-          </div>
+  <div class="container">
+    <div class="footer__grid footer__grid--compact">
+      <!-- Col 1: Brand -->
+      <div class="footer__col-brand">
+        <div class="footer__brand-title" style="font-size:1.35rem;font-weight:700;color:var(--clr-text,#1E293B);margin-bottom:10px">
+          Vidhata Life
         </div>
-
-        <!-- Col 2: Company -->
-        <div>
-          <div class="footer__col-title">Company</div>
-          <div class="footer__links">
-            <a href="about.html" class="footer__link">About Us</a>
-            <a href="about.html#leadership" class="footer__link">Leadership</a>
-            <a href="end-to-end.html" class="footer__link">End-to-end</a>
-            <a href="licences.html" class="footer__link">Licences &amp; Certs</a>
-            <a href="careers.html" class="footer__link">Careers</a>
-            <a href="blog.html" class="footer__link">Blog &amp; Insights</a>
-            <a href="case-studies.html" class="footer__link">Case Studies</a>
-          </div>
-        </div>
-
-        <!-- Col 3: Services & Capabilities -->
-        <div>
-          <div class="footer__col-title">Services</div>
-          <div class="footer__links">
-            <a href="medical.html" class="footer__link">Medical &amp; Pharma</a>
-            <a href="cleanroom-moulding.html" class="footer__link">Cleanroom Moulding</a>
-            <a href="contract-manufacturing.html" class="footer__link">Contract Manufacturing</a>
-            <a href="assembly-packaging.html" class="footer__link">Assembly &amp; Packaging</a>
-            <a href="extruders.html" class="footer__link">Extrusion &amp; Tubing</a>
-            <a href="quality.html" class="footer__link">Quality &amp; Testing</a>
-            <a href="virexa.html" class="footer__link">VIREXA Finished Goods</a>
-          </div>
-        </div>
-
-        <!-- Col 4: Facilities -->
-        <div>
-          <div class="footer__col-title">Facilities</div>
-          <div class="footer__facility-block">
-            <div class="footer__facility-title">
-              <span class="footer__facility-tag">Unit 2 &middot; Plant</span> Maheshwaram
-            </div>
-            <p class="footer__facility-address">
-              S-1 P/C, Survey No. 114, E-City, Maheshwaram, Rangareddy, Telangana 501359
-            </p>
-            <div class="footer__facility-scope">
-              Toolroom, moulding, cleanroom (ISO 7 &amp; 8), QC and stability lab
-            </div>
-          </div>
-          <div class="footer__facility-block" style="margin-top:16px;">
-            <div class="footer__facility-title">
-              <span class="footer__facility-tag">Unit 1 &middot; Regd Office</span> Cherlapally
-            </div>
-            <p class="footer__facility-address">
-              Plot No. 205/2, Phase II, IDA Cherlapally, Hyderabad 500051
-            </p>
-            <div class="footer__facility-scope">
-              Registered corporate office &amp; operations
-            </div>
-          </div>
-        </div>
-
-        <!-- Col 5: Contact -->
-        <div>
-          <div class="footer__col-title">Contact</div>
-          <div class="footer__contact-item">
-            <span class="footer__contact-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.22 4 2 2 0 012.2 2H5.2a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.72 6.72l1.28-.54a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18.92z" />
-              </svg>
-            </span>
-            <div style="display:flex;flex-direction:column;gap:3px">
-              <a href="tel:+919885100808" class="footer__contact-link">+91 98851 00808 <span
-                  class="footer__contact-person">(Vikrant K.)</span></a>
-              <a href="tel:+918008801778" class="footer__contact-link">+91 80088 01778 <span
-                  class="footer__contact-person">(Arvind Kandi)</span></a>
-            </div>
-          </div>
-          <div class="footer__contact-item">
-            <span class="footer__contact-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-            </span>
-            <div style="display:flex;flex-direction:column;gap:3px">
-              <a href="mailto:info@vidhata.co.in" class="footer__contact-link">info@vidhata.co.in</a>
-              <a href="mailto:vikrant@vidhata.co.in" class="footer__contact-link">vikrant@vidhata.co.in</a>
-              <a href="mailto:arvind.kandi7@gmail.com" class="footer__contact-link">arvind.kandi7@gmail.com</a>
-            </div>
-          </div>
-          <div class="footer__hours">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              style="flex-shrink:0;margin-top:2px;stroke:#E5C158">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-            <span>Mon &ndash; Sat, 09:00&ndash;18:00 IST (UTC+5:30)</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Statutory & Compliance Strip -->
-      <div class="footer__bottom">
-        <p class="footer__legal-line">
-          VIDHATA PLASTICS INDIA PRIVATE LIMITED &middot; CIN U25209TG1990PTC012152 &middot; GST 36AAACV8175G1Z2
-          &middot; Manufacturing licence MFG/MD/2026/000078 (CDSCO Form MD-5)
+        <p class="footer__brand-desc" style="color:var(--clr-text-muted,#475569);font-size:0.9rem;line-height:1.6;margin:0;max-width:320px">
+          An SBU of Vidhata Plastics India Private Limited. Medical device and pharma packaging development and contract manufacturing, Hyderabad.
         </p>
-        <div class="footer__bottom-row">
-          <p class="footer__copy">&copy; 2026 Vidhata Life &middot; An SBU of Vidhata Plastics. All rights reserved.</p>
-          <div class="footer__social">
-            <a href="https://www.linkedin.com/company/vidhata-plastics" class="footer__social-link"
-              aria-label="LinkedIn" target="_blank" rel="noopener">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
-            </a>
-            <a href="#" class="footer__social-link" aria-label="Twitter">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-              </svg>
-            </a>
-            <a href="https://wa.me/919885100808" class="footer__social-link" aria-label="WhatsApp" target="_blank"
-              rel="noopener">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-              </svg>
-            </a>
-          </div>
-          <div class="footer__legal-links">
-            <a href="privacy.html" class="footer__legal-link">Privacy Policy</a>
-            <a href="privacy.html#terms" class="footer__legal-link">Terms of Use</a>
-            <a href="licences.html" class="footer__legal-link">Licences &amp; Certifications</a>
+      </div>
+
+      <!-- Col 2: Contact -->
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:6px;font-size:0.9rem;color:var(--clr-text-muted,#475569);line-height:1.5">
+          <div><a href="mailto:info@vidhata.co.in" style="color:var(--clr-primary,#0284C7);font-weight:600;text-decoration:none">info@vidhata.co.in</a></div>
+          <div><a href="tel:+919885100808" style="color:var(--clr-primary,#0284C7);font-weight:600;text-decoration:none">+91 98851 00808</a></div>
+          <div style="color:var(--clr-text-light,#64748B);font-size:0.84rem;margin-top:2px">Monday to Saturday, 09:00–18:00 IST (UTC+5:30)</div>
+          <div style="color:#059669;font-weight:600;font-size:0.84rem;margin-top:2px">&#10004; We reply within one working day.</div>
+        </div>
+      </div>
+
+      <!-- Col 3: Unit 2 — Maheshwaram -->
+      <div>
+        <div class="footer__col-title">Unit 2 — Maheshwaram</div>
+        <div style="display:flex;flex-direction:column;gap:6px;font-size:0.88rem;color:var(--clr-text-muted,#475569);line-height:1.55">
+          <p style="margin:0;color:var(--clr-text,#1E293B)">
+            S-1 P/C, Survey No. 114, E-City, Maheshwaram, Rangareddy, Telangana 501359
+          </p>
+          <div style="font-size:0.82rem;color:var(--clr-text-light,#64748B);margin-top:4px">
+            Toolroom, moulding, cleanroom, QC and stability lab
           </div>
         </div>
       </div>
-  </footer>
+
+      <!-- Col 4: Unit 1 — Cherlapally -->
+      <div>
+        <div class="footer__col-title">Unit 1 — Cherlapally</div>
+        <div style="display:flex;flex-direction:column;gap:6px;font-size:0.88rem;color:var(--clr-text-muted,#475569);line-height:1.55">
+          <p style="margin:0;color:var(--clr-text,#1E293B)">
+            Plot No. 205/2, Phase II, IDA Cherlapally, Hyderabad 500051
+          </p>
+          <div style="font-size:0.82rem;color:var(--clr-text-light,#64748B);margin-top:4px">
+            Registered office
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statutory & Compliance Strip -->
+    <div class="footer__bottom" style="padding-top:24px;border-top:1px solid #DFE6EE;margin-top:0">
+      <p class="footer__legal-line" style="margin:0;font-size:0.82rem;color:#64748B;line-height:1.6;text-align:center">
+        VIDHATA PLASTICS INDIA PRIVATE LIMITED &middot; CIN U25209TG1990PTC012152 &middot; GST 36AAACV8175G1Z2 &middot; Manufacturing licence MFG/MD/2026/000078 &middot; <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy</a> &middot; <a href="about.html" style="color:inherit;text-decoration:underline">Notes for the developer</a>
+      </p>
+    </div>
+  </div>
+</footer>
   <a href="https://wa.me/918008801778" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg
       viewBox="0 0 24 24" fill="currentColor">
       <path
@@ -629,70 +372,7 @@
       stroke="currentColor" stroke-width="2">
       <path d="M18 15l-6-6-6 6" />
     </svg></button>
-  <script>
-    (function () {
-      var INTERVAL = 2000;
-      var wrap = document.getElementById('medInfraWrap');
-      var gallery = document.getElementById('medInfraGallery');
-      if (!gallery) return;
-      var slides = gallery.querySelectorAll('.infra-slide');
-      var tabs = document.getElementById('medInfraTabs') ? document.getElementById('medInfraTabs').querySelectorAll('.infra-tab') : [];
-      var prevBtn = document.getElementById('medInfraPrev');
-      var nextBtn = document.getElementById('medInfraNext');
-      var progBar = document.getElementById('medInfraProgress');
-      var total = slides.length, current = 0, rafId = null, startTime = null, paused = false;
 
-      function goTo(idx) {
-        slides[current].classList.remove('infra-slide--active');
-        if (tabs[current]) tabs[current].classList.remove('active');
-        current = (idx + total) % total;
-        slides[current].classList.add('infra-slide--active');
-        if (tabs[current]) tabs[current].classList.add('active');
-        resetProgress();
-      }
-      function resetProgress() {
-        cancelAnimationFrame(rafId);
-        if (progBar) { progBar.style.transition = 'none'; progBar.style.width = '0%'; }
-        startTime = null;
-        requestAnimationFrame(function () {
-          requestAnimationFrame(function () {
-            startTime = performance.now(); rafId = requestAnimationFrame(tick);
-          });
-        });
-      }
-      function tick(ts) {
-        if (paused) return;
-        if (!startTime) startTime = ts;
-        var pct = Math.min(((ts - startTime) / INTERVAL) * 100, 100);
-        if (progBar) progBar.style.width = pct + '%';
-        if (pct < 100) { rafId = requestAnimationFrame(tick); } else { goTo(current + 1); }
-      }
-      if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); });
-      if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
-      tabs.forEach(function (tab) { tab.addEventListener('click', function () { goTo(parseInt(tab.getAttribute('data-idx'), 10)); }); });
-      if (wrap) {
-        wrap.addEventListener('mouseenter', function () { paused = true; cancelAnimationFrame(rafId); });
-        wrap.addEventListener('mouseleave', function () { paused = false; startTime = null; rafId = requestAnimationFrame(tick); });
-      }
-      var tx = 0;
-      gallery.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
-      gallery.addEventListener('touchend', function (e) { var dx = tx - e.changedTouches[0].clientX; if (Math.abs(dx) > 40) goTo(current + (dx > 0 ? 1 : -1)); }, { passive: true });
-      /* 3D tilt */
-      if (wrap) {
-        var tRX = 0, tRY = 0, cRX = 0, cRY = 0, tRaf = null, gX = 50, gY = 50;
-        var cg = document.createElement('div'); cg.className = 'infra-cursor-glow'; wrap.appendChild(cg);
-        function lerpT() {
-          cRX += (tRX - cRX) * 0.1; cRY += (tRY - cRY) * 0.1;
-          wrap.style.transform = 'perspective(1000px) rotateX(' + cRX + 'deg) rotateY(' + cRY + 'deg) scale(1.015)';
-          cg.style.background = 'radial-gradient(circle at ' + gX + '% ' + gY + '%, rgba(14,165,233,0.18) 0%, transparent 60%)';
-          if (Math.abs(tRX - cRX) > 0.01 || Math.abs(tRY - cRY) > 0.01) tRaf = requestAnimationFrame(lerpT);
-        }
-        wrap.addEventListener('mousemove', function (e) { var r = wrap.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height; tRY = (px - 0.5) * 14; tRX = -(py - 0.5) * 8; gX = px * 100; gY = py * 100; cancelAnimationFrame(tRaf); tRaf = requestAnimationFrame(lerpT); });
-        wrap.addEventListener('mouseleave', function () { tRX = 0; tRY = 0; cancelAnimationFrame(tRaf); tRaf = requestAnimationFrame(lerpT); cg.style.background = 'none'; });
-      }
-      resetProgress();
-    })();
-  </script>
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/medical-products.js?v=arni-responsive"></script>

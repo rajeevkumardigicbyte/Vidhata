@@ -567,21 +567,36 @@ class ProductShowcase {
         card.setAttribute('data-id', p.id);
         card.setAttribute('data-reveal', 'up');
         card.style.cursor = 'pointer';
-        
+
+        const catName = p.categoryDisplay ? p.categoryDisplay.split('·')[0].trim() : p.category;
+        const variantsHtml = (p.specs && p.specs.Variants)
+          ? `<div class="product-card__variants"><span style="font-weight:700;color:#0F172A">Variants.</span> ${p.specs.Variants}</div>`
+          : '';
+        const imgPath = (p.image || '').replace(/^\//, '');
+
         card.innerHTML = `
-          <span class="product-card__badge">${p.categoryDisplay || p.category}</span>
+          <span class="product-card__badge">${catName}</span>
           <div class="product-card__img-wrap">
-            <img src="${p.image}" alt="${p.title}" class="product-card__img" loading="lazy" onerror="this.onerror=null;this.src='images/medical-products.png'">
+            <img src="${imgPath}" alt="${p.title}" class="product-card__img" loading="lazy" onerror="this.onerror=null;this.src='images/medical-products.png'">
           </div>
-          <h4 class="product-card__title">${p.title}</h4>
+          <h3 class="product-card__title">${p.title}</h3>
           <p class="product-card__desc">${p.description}</p>
+          ${variantsHtml}
+          <div class="product-card__specs">
+            <span class="spec-tag spec-tag--class">Class B</span>
+            <span class="spec-tag spec-tag--sterile">Sterile</span>
+            <span class="spec-tag spec-tag--shelf">3-year shelf life</span>
+            <span class="spec-tag spec-tag--brand">VIREXA</span>
+          </div>
           <div style="margin-top:auto;width:100%">
             <a href="product.html?id=${p.id}" class="btn btn--primary btn--sm product-card__btn" style="width:100%;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-weight:600">View Device Details &rarr;</a>
           </div>
         `;
 
-        card.addEventListener('click', () => {
-          window.location.href = `product.html?id=${p.id}`;
+        card.addEventListener('click', (e) => {
+          if (!e.target.closest('a')) {
+            window.location.href = `product.html?id=${p.id}`;
+          }
         });
         this.grid.appendChild(card);
       });
